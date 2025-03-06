@@ -1,0 +1,452 @@
+:root {
+  --yellow: #fed700;
+  --over_red: #ae1213;
+  --header_color: #1a242d;
+  --white: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+header {
+  background-color: rgba(26, 36, 45, 0.7); /* Цвет #1a242d с прозрачностью */
+  position: absolute;
+  width: 100%;
+  z-index: 55;
+}
+footer {
+  background-color: var(--header_color);
+}
+.container {
+  max-width: 1328px;
+  margin: 0 auto;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+/* -- NAVBAR START -- */
+.to_container {
+  height: 10px;
+  background: rgb(26, 36, 45);
+  background: linear-gradient(
+    0deg,
+    rgba(26, 36, 45, 1) 5%,
+    rgba(174, 18, 19, 0.8688725490196079) 62%
+  );
+}
+.navbar_container {
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+}
+.logo_lang {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.langs_menu {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+.langs_menu button {
+  background: none;
+  border: 1px solid var(--over_red);
+  padding: 5px;
+  border-radius: 2px;
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+.langs_menu button:hover {
+  background-color: var(--white);
+  color: var(--header_color);
+}
+.logo_img {
+  width: 150px;
+  height: 120px;
+  border-right: 1px solid rgb(255 255 255 / 10%);
+}
+.logo_img img {
+  width: 100%;
+  height: 100%;
+}
+.nav_bar_icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1%;
+  height: 100%;
+}
+nav {
+  height: 100%;
+}
+
+nav ul {
+  display: flex;
+  gap: 40px;
+  height: 100%;
+  align-items: end;
+}
+
+nav ul li {
+  color: var(--white);
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.header_contacts {
+  display: flex;
+  gap: 45px;
+  font-size: 16px;
+}
+.header_contacts_phones {
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 10px;
+}
+.langs_menu_contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.contact_item:hover {
+  color: var(--over_red);
+}
+.mail_icons {
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  align-items: end;
+  justify-content: space-between;
+}
+.soc_icons {
+  display: flex;
+  gap: 10px;
+  color: var(--white);
+  align-items: center;
+}
+
+.soc_icons svg {
+  width: 15px; /* Установи нужный размер */
+  height: 15px;
+  color: white; /* Цвет иконок */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.soc_icons svg:hover {
+  color: rgb(251, 126, 126); /* Эффект при наведении */
+}
+/* --- NAVBAR END --- */
+/* -- HERO START -- */
+.hero_container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero_container h1 {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 13vh;
+  z-index: 555;
+  text-align: center;
+  padding-top: 5%;
+}
+.hero_section {
+  position: relative;
+  height: 90vh;
+  background-color: aqua;
+  background: url("./images/bg_images/forging_bg2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40% 30%;
+  background-attachment: fixed;
+}
+
+.hero_section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Темный цвет с прозрачностью */
+  z-index: 1; /* Чтобы псевдоэлемент был сверху, но под содержимым */
+}
+
+/* --- HERO END --- */
+
+.separator_class {
+  height: 15vh;
+  background: rgb(26, 36, 45);
+  background: radial-gradient(
+    circle,
+    rgba(26, 36, 45, 1) 94%,
+    rgba(174, 18, 19, 1) 100%
+  );
+}
+
+/* -- Short ABOUT section START -- */
+.short_about_section {
+  /* height: 80vh; */
+  background-image: url("./images/bg_images/forging_bg3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40% 30%;
+  background-attachment: fixed;
+  padding-bottom: 5%;
+}
+.short_about_uzor_after {
+  background: url("./images/after-before/after_img.png");
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 70px;
+}
+.short_about_uzor_before {
+  background: url("./images/after-before/after_img.png");
+  transform: rotate(180deg);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 70px;
+}
+.short_about_h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.short_about_h2 h2 {
+  max-width: 500px;
+  color: var(--white);
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+
+  font-size: 10vh;
+  text-align: center;
+  padding-top: 3%;
+}
+.short_about_content {
+  display: flex;
+  justify-content: space-around;
+  background-color: #1a242d;
+  padding: 3%;
+}
+.short_about_content_h3_p {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.short_about_content h3 {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-size: 8vh;
+  color: var(--white);
+}
+.short_about_content_h3_p p {
+  font-weight: 400;
+  font-size: 3vh;
+  color: #999999;
+  line-height: 30px;
+}
+.sviper_example {
+  width: 290px;
+  height: 340px;
+  -webkit-box-shadow: 64px 65px 3px 2px rgba(209, 209, 209, 0.25);
+  -moz-box-shadow: 64px 65px 3px 2px rgba(209, 209, 209, 0.25);
+  box-shadow: 64px 65px 3px 2px rgba(209, 209, 209, 0.25);
+}
+.sviper_example img {
+  width: 100%;
+  height: 100%;
+}
+/* --- SHORT ABOUT SECTION END --- */
+
+/* -- Projects Section START -- */
+.projects_section {
+  background-image: url("./images/bg_images/forging_bg4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40% 30%;
+  background-attachment: fixed;
+  position: relative;
+  padding-bottom: 100px;
+}
+.projects_section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.projects_container {
+  z-index: 8888;
+  position: relative;
+}
+.projects_section_h2 {
+  z-index: 999;
+  padding: 1% 0 !important;
+}
+
+.projects_grid_container {
+  max-width: 1328px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 карточки */
+  gap: 20px; /* Добавляет отступы между карточками */
+}
+
+.projects_grid_card {
+  background-color: #a4a4a43b; /* Чтобы было видно */
+  padding: 5px;
+  border-radius: 5px;
+  width: 300px;
+  justify-self: center;
+  overflow: hidden;
+}
+.projects_grid_card img {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.projects_grid_card img:hover {
+  transform: scale(1.1);
+}
+
+.more_projects_btn {
+  text-align: center;
+  padding-top: 2%;
+}
+
+.go_to_project_page {
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  height: 48px;
+  padding: 0 17px;
+  border: 1px solid #e8ac39;
+  border-radius: 6px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 0 1px #000;
+  font-size: 12px;
+  line-height: 48px;
+  color: #e8ac39;
+  background-color: transparent;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s ease-in-out;
+}
+.go_to_project_page:hover {
+  transform: scale(1.05);
+  border-color: #ffcc00;
+  box-shadow: 0 0 10px #ffcc00;
+  transition: all 0.3s ease-in-out;
+}
+.go_to_project_page::after,
+.go_to_project_page::before {
+  content: "";
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  width: 13px;
+  height: 48px;
+  margin: 0 5px;
+  background: url("./images/after-before/\(1\).png") no-repeat center center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/* --- Projects Section END --- */
+
+/* -- FOOTER START -- */
+.footer_container {
+  padding-top: 1%;
+}
+.footer_logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  border-bottom: 1px solid #a4a4a43b;
+  padding-bottom: 2%;
+}
+
+.footer_logo img {
+  width: 80px;
+  height: 40px;
+}
+.footer_contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+.footer_contact_item {
+  font-weight: 400;
+}
+
+.footer_soc_icons {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  gap: 50px;
+  padding: 1% 0;
+  border-bottom: 1px solid #a4a4a43b;
+
+}
+.footer_soc_icons svg {
+  width: 25px;
+  height: 25px;
+}
+.footer_copyr{
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    padding: 1% 0;
+    letter-spacing: 1px;
+}
+
+/* --- FOOTER END --- */
