@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/juko_front/static/css/main.086748e9.css",
+    "main.js": "/juko_front/static/js/main.56963bd3.js",
+    "static/media/forging_bg2.jpg": "/juko_front/static/media/forging_bg2.4287c92aef8d0a71a48a.jpg",
+    "static/media/forging_bg3.jpg": "/juko_front/static/media/forging_bg3.6b30f58c1522c0bdbd3e.jpg",
+    "static/media/forging_bg4.jpg": "/juko_front/static/media/forging_bg4.a2d2302652cc805ea0ef.jpg",
+    "static/media/1.png": "/juko_front/static/media/1.00eeceb792da5d10ce8a.png",
+    "static/media/logo200.png": "/juko_front/static/media/logo200.004349c954f7559102ff.png",
+    "static/media/3.jpg": "/juko_front/static/media/3.6dd995f43146933cef6f.jpg",
+    "static/media/1.jpg": "/juko_front/static/media/1.9d78b065a88918a1744c.jpg",
+    "static/media/2.jpg": "/juko_front/static/media/2.688953313c7079d0ff17.jpg",
+    "static/media/anvil_cut.png": "/juko_front/static/media/anvil_cut.b966b2d45f133ac79902.png",
+    "index.html": "/juko_front/index.html",
+    "main.086748e9.css.map": "/juko_front/static/css/main.086748e9.css.map",
+    "main.56963bd3.js.map": "/juko_front/static/js/main.56963bd3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.086748e9.css",
+    "static/js/main.56963bd3.js"
+  ]
+}
