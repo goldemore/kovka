@@ -47,10 +47,37 @@ const Footer = () => {
           </div>
         </div>
         <div className="soc_icons footer_soc_icons">
-          <FaFacebookF />
-          <FaInstagram />
-          <FaYoutube />
-          <FaTiktok />
+          <a
+            href="https://www.facebook.com/people/Kovkaaz/100092172795360/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookF />
+          </a>
+
+          <a
+            href="https://www.instagram.com/kovka.az/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram />
+          </a>
+
+          <a
+            href="https://www.youtube.com/@Kovka_az"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaYoutube />
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@kovka.az"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaTiktok />
+          </a>
         </div>
         <p className="footer_copyr">© Copyright 2020 All Rights Reserved</p>
         <div className="footer_end"></div>

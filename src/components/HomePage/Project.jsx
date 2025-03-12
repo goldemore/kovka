@@ -30,9 +30,12 @@ const Project = () => {
             <div className="projects_grid_card">
                 <img src={img3} alt="" />
             </div>
+            <div className="projects_grid_card">
+                <img src={img3} alt="" />
+            </div>
         </div>
         <div className="more_projects_btn">
-            <Link to='/' className='go_to_project_page'>DAHA ÇOXU</Link>
+            <Link to='/projects' className='go_to_project_page'>DAHA ÇOXU</Link>
         </div>
       </div>
     </section>
