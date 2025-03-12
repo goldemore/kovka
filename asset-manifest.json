@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kovka/static/css/main.6a30e20f.css",
-    "main.js": "/kovka/static/js/main.3283af37.js",
+    "main.js": "/kovka/static/js/main.84226cb8.js",
     "static/media/forging_bg2.jpg": "/kovka/static/media/forging_bg2.4287c92aef8d0a71a48a.jpg",
     "static/media/forging_bg3.jpg": "/kovka/static/media/forging_bg3.6b30f58c1522c0bdbd3e.jpg",
     "static/media/forging_bg4.jpg": "/kovka/static/media/forging_bg4.a2d2302652cc805ea0ef.jpg",
@@ -19,10 +19,10 @@
     "static/media/377_1.png": "/kovka/static/media/377_1.99a7bd427ebeec9ead95.png",
     "index.html": "/kovka/index.html",
     "main.6a30e20f.css.map": "/kovka/static/css/main.6a30e20f.css.map",
-    "main.3283af37.js.map": "/kovka/static/js/main.3283af37.js.map"
+    "main.84226cb8.js.map": "/kovka/static/js/main.84226cb8.js.map"
   },
   "entrypoints": [
     "static/css/main.6a30e20f.css",
-    "static/js/main.3283af37.js"
+    "static/js/main.84226cb8.js"
   ]
 }
