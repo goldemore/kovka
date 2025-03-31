@@ -29,6 +29,12 @@
   .header_contacts {
     gap: 35px;
   }
+  .project2_section {
+    height: 80vh;
+  }
+  .footer_contacts{
+    height: 80vh;
+  }
 }
 
 @media screen and (max-width: 1030px) {
@@ -85,12 +91,21 @@
 @media screen and (max-width: 600px) {
   .nav_bar_icons {
     display: none;
+  }.logo_img{
+    width: 100px;
+    height: 100px;
+  }
+  .project2_section {
+    height: 70vh;
+  }
+  .footer_contacts{
+    height: 70vh;
   }
 }
 
 @media screen and (max-width: 550px) {
   .header_contacts_phones {
-    display: none;
+    /* display: none; */
   }
   .mail_icons {
     gap: 15px;
@@ -105,5 +120,11 @@
 @media screen and (max-width: 500px) {
   .hero_container h1 {
     font-size: 10vh;
+  }
+  .project2_section {
+    height: 50vh;
+  }
+  .footer_contacts{
+    height: 50vh;
   }
 }

@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
+AOS.init({
+  duration: 800,
+}); // Инициализация
+
 const ContactPage = () => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -27,7 +36,7 @@ const ContactPage = () => {
     <>
       <section className="hero_about_section">
         <div className="container hero_about_container">
-          <h1 className="project_h1">BİZİMLƏ ƏLAQƏ</h1>
+          <h1 className="project_h1 tracking-in-contract">{t('contactUs')}</h1>
         </div>
       </section>
       <section className="hero_about_section_content">
@@ -55,6 +64,9 @@ const ContactPage = () => {
               placeholder="Adınız"
               className="contact-input"
               required
+              data-aos="fade-up"
+              data-aos-delay="100"
+              data-aos-duration="800"
             />
             <input
               type="text"
@@ -64,6 +76,9 @@ const ContactPage = () => {
               placeholder="Telefon"
               className="contact-input"
               required
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="800"
             />
             <input
               type="email"
@@ -73,6 +88,9 @@ const ContactPage = () => {
               placeholder="E-mail"
               className="contact-input"
               required
+              data-aos="fade-up"
+              data-aos-delay="300"
+              data-aos-duration="800"
             />
             <textarea
               name="message"
@@ -81,8 +99,17 @@ const ContactPage = () => {
               placeholder="Mesajınız"
               className="contact-input"
               required
+              data-aos="fade-up"
+              data-aos-delay="400"
+              data-aos-duration="800"
             />
-            <button type="submit" className="submit-btn">
+            <button
+              type="submit"
+              className="submit-btn"
+              data-aos="fade-up"
+              data-aos-delay="500"
+              data-aos-duration="800"
+            >
               Göndər
             </button>
           </form>
@@ -90,7 +117,12 @@ const ContactPage = () => {
         <div className="container">
           <iframe
             src="https://www.google.com/maps?q=Baku, Azerbaijan&output=embed"
-            style={{ width: "100%", height: "300px", border: "none", marginTop:'15px' }}
+            style={{
+              width: "100%",
+              height: "300px",
+              border: "none",
+              marginTop: "15px",
+            }}
             allowFullScreen
             title="Google Maps location - Baku, Azerbaijan"
           ></iframe>

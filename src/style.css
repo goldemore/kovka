@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+  font-family: "Merriweather", serif;
 }
 
 html {
@@ -101,7 +101,7 @@ nav ul {
   display: flex;
   gap: 40px;
   height: 100%;
-  align-items: end;
+  align-items: center;
 }
 
 nav ul li {
@@ -123,7 +123,7 @@ nav ul li {
   align-items: center;
   color: white;
   gap: 10px;
-  width: 160px;
+  /* width: 160px; */
 }
 .bg_header_contacts_phones {
   display: none !important;
@@ -174,54 +174,155 @@ nav ul li {
   color: rgb(251, 126, 126); /* Эффект при наведении */
 }
 
-/* --- NAVBAR END --- */
-/* -- HERO START -- */
-.hero_container {
-  height: 100%;
+/* Navbar2 new design */
+.navbar2_container {
+  display: flex;
+  justify-content: space-between;
+}
+.nav_plus_langs_container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 25px;
 }
-.hero_container h1 {
-  font-family: "Great Vibes", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: white;
-  font-size: 13vh;
-  z-index: 5;
-  text-align: center;
-  padding-top: 15%;
-}
-.hero_section {
+.lang_select {
   position: relative;
-  height: 90vh;
-  background-color: aqua;
-  background: url("./images/bg_images/forging_bg2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 40% 30%;
-  background-attachment: fixed;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.hero_section::after {
-  content: "";
+.selected_lang {
+  padding: 5px 12px;
+  background: #f3f3f3;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.lang_list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  /* width: 80px; */
+}
+
+.lang_list li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lang_list li:hover {
+  background: #e3e3e3;
+}
+
+
+/* --- NAVBAR END --- */
+/* -- HERO START -- */
+.hero_section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero_title {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(28px, 7vw, 130px);
+  font-weight: 400;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hero_slider_wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 1s ease-in-out; /* Плавное появление */
+}
+.swiper-slide-prev img,
+.swiper-slide-next img {
+  filter: blur(50px); /* Размытие для соседних слайдов */
+}
+
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Темный цвет с прозрачностью */
-  z-index: 1; /* Чтобы псевдоэлемент был сверху, но под содержимым */
+  background: rgba(0, 0, 0, 0.4); /* Затемнение */
+}
+
+.tracking-in-contract {
+  -webkit-animation: tracking-in-contract 2s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  animation: tracking-in-contract 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+@-webkit-keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1.5em; /* Увеличиваем начальное расстояние */
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.7; /* Плавно увеличиваем видимость */
+  }
+  100% {
+    letter-spacing: 4px; /* Восстанавливаем нормальное расстояние */
+    opacity: 1;
+  }
+}
+
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1.5em; /* Увеличиваем начальное расстояние */
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.7; /* Плавно увеличиваем видимость */
+  }
+  100% {
+    letter-spacing: 4px; /* Восстанавливаем нормальное расстояние */
+    opacity: 1;
+  }
 }
 
 /* --- HERO END --- */
 
 .separator_class {
-  height: 15vh;
+  height: 45px;
   background: rgb(26, 36, 45);
   background: radial-gradient(
     circle,
-    rgba(26, 36, 45, 1) 94%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(26, 36, 45, 1) 45%,
     rgba(174, 18, 19, 1) 100%
   );
 }
@@ -229,21 +330,21 @@ nav ul li {
 /* -- Short ABOUT section START -- */
 .short_about_section {
   /* height: 80vh; */
-  background-image: url("./images/bg_images/forging_bg3.jpg");
+  background-image: url("./images/bg_images/forging_bg3.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 40% 30%;
   background-attachment: fixed;
   padding-bottom: 5%;
 }
-.short_about_uzor_after {
+/* .short_about_uzor_after {
   background: url("./images/after-before/under_uzor.png");
   background-repeat: no-repeat;
   background-size: contain;
   width: 200px;
   height: 70px;
-}
-.short_about_uzor_before {
+} */
+/* .short_about_uzor_before {
   background: url("./images/after-before/under_uzor.png");
   transform: rotate(180deg);
   background-repeat: no-repeat;
@@ -251,29 +352,32 @@ nav ul li {
 
   width: 200px;
   height: 70px;
-}
+} */
 .short_about_h2 {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
+  justify-content: center;
 }
 .short_about_h2 h2 {
   max-width: 700px;
   color: var(--white);
-  font-family: "Great Vibes", cursive;
+  font-family: "Merriweather", serif;
   font-weight: 400;
-
-  font-size: 10vh;
+  font-size: clamp(28px, 5vw, 130px);
   text-align: center;
   padding-top: 3%;
+  padding-bottom: 3%;
+  letter-spacing: 4px;
 }
 .short_about_content {
   display: flex;
   justify-content: space-around;
   background: radial-gradient(
     circle,
-    rgba(26, 36, 45, 1) 90%,
-    rgba(174, 18, 19, 1) 100%
+    rgba(0, 0, 0, 0.8) 10%,
+    rgba(26, 36, 45, 1) 35%,
+    rgba(174, 18, 19, 1) 115%
   );
   padding: 3%;
 }
@@ -282,17 +386,18 @@ nav ul li {
   display: flex;
   flex-direction: column;
 }
-.short_about_content h3 {
+/* .short_about_content h3 {
   font-family: "Great Vibes", cursive;
   font-weight: 400;
   font-size: 8vh;
   color: var(--white);
-}
+} */
 .short_about_content_h3_p p {
   font-weight: 400;
-  font-size: 3vh;
+  font-size: 1.8rem;
   color: #999999;
   line-height: 30px;
+  letter-spacing: 1px;
 }
 .sviper_example {
   width: 320px;
@@ -301,9 +406,6 @@ nav ul li {
 .sviper_example img {
   width: 100%;
   height: 100%;
-  -webkit-box-shadow: 40px 40px 3px 2px rgba(209, 209, 209, 0.25);
-  -moz-box-shadow: 40px 40px 3px 2px rgba(209, 209, 209, 0.25);
-  box-shadow: 40px 40px 3px 2px rgba(209, 209, 209, 0.25);
 }
 /* --- SHORT ABOUT SECTION END --- */
 
@@ -334,7 +436,7 @@ nav ul li {
 }
 .projects_section_h2 {
   z-index: 999;
-  padding: 1% 0 !important;
+  padding: 3% 0 !important;
 }
 
 .projects_grid_container {
@@ -410,13 +512,38 @@ nav ul li {
   transition: all 0.2s;
 }
 
+/* Project2 START */
+.project2_section {
+  background: url("./images/bg_images/world_map.webp") no-repeat center center;
+  background-size: cover;
+  height: 90vh;
+  position: relative;
+}
+
+.project2_section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Темный цвет с прозрачностью */
+  z-index: -1; /* Чтобы псевдоэлемент был сверху, но под содержимым */
+}
+.place_address {
+  display: flex;
+  color: white;
+  gap: 10px;
+  align-items: center;
+}
+
 /* --- Projects Section END --- */
 
 /* -- FOOTER START -- */
 .footer_container {
   padding-top: 1%;
 }
-.footer_logo {
+/* .footer_logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -428,15 +555,19 @@ nav ul li {
 .footer_logo img {
   width: 80px;
   height: 40px;
-}
+} */
 .footer_contacts {
   display: flex;
   flex-direction: column;
   gap: 5px;
   font-size: 15px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-weight: 400;
+  height: 90vh;
+  position: sticky;
+  
+  padding-left: 10%;
 }
 .footer_contact_item {
   font-weight: 400;
@@ -490,20 +621,22 @@ nav ul li {
 }
 .hero_about_container h1 {
   position: sticky;
-  font-family: "Nunito", sans-serif;
+  font-family: "Merriweather", serif;
   font-size: 40px;
   color: white;
-  letter-spacing: 1px;
+  letter-spacing: 4px;
   z-index: 5;
+  font-weight: 500;
 }
 
 .about_content_section {
   background: radial-gradient(
     circle,
-    rgba(26, 36, 45, 1) 90%,
-    rgba(174, 18, 19, 1) 100%
+    rgba(0, 0, 0, 0.8) 10%,
+    rgba(26, 36, 45, 1) 35%,
+    rgba(174, 18, 19, 1) 115%
   );
-  padding: 3% 6%;
+  padding: 2% 3%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -515,7 +648,7 @@ nav ul li {
 }
 .hero_about_section_content p {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 .img_plus_piece_of_text_img {
   max-width: 360px;
@@ -529,13 +662,13 @@ nav ul li {
   align-items: center;
 }
 .img_plus_piece_of_text p {
-  border-radius: 2%;
   padding: 2%;
-  max-width: 650px;
-  background-color: hsl(142deg 0% 56.69% / 25%);
+  max-width: 570px;
+  text-align: justify;
+  letter-spacing: 0.6px;
 }
 .img_plus_piece_of_text span {
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .div_liner {
@@ -555,18 +688,7 @@ nav ul li {
   justify-content: center;
 }
 
-.project_h1::after {
-  content: "";
-  position: absolute;
-  /* right: -20px; */
-  /* top: 0; */
-  width: 110%;
-  height: 48px;
-  background: url("./images/after-before/377_1.png") no-repeat center center;
-  background-size: contain; /* Масштабирование изображения */
-  z-index: 7777;
-  bottom: -40px;
-}
+
 .grid_container_products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -577,11 +699,81 @@ nav ul li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 }
 
 .product_card_image {
+  position: relative; /* Для размещения иконки и затемнения */
   max-width: 360px;
+  overflow: hidden;
+  cursor: pointer;
+
 }
+
+.product_card_image img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  
+}
+
+.product_card_image:hover img {
+  transform: scale(1.05);
+}
+
+.zoom-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрирует иконку */
+  opacity: 0;
+  font-size: 2rem; /* Размер иконки */
+  color: white; /* Цвет иконки */
+  transition: opacity 0.3s ease-in-out; /* Плавность появления */
+  z-index: 99999999999;
+}
+
+.product_card_image:hover .zoom-icon {
+  opacity: 1; /* Показываем иконку при наведении */
+}
+
+/* Затемняющий эффект */
+.product_card_image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  opacity: 0; /* Изначально невидим */
+  transition: opacity 0.3s ease-in-out; /* Плавность появления */
+}
+
+.product_card_image:hover::after {
+  opacity: 1; /* Затемнение фона при наведении */
+}
+
+
+
 .product_card_image img {
   width: 100%;
 }
@@ -636,8 +828,9 @@ nav ul li {
   margin: 0 auto;
   background: radial-gradient(
     circle,
-    rgba(26, 36, 45, 1) 90%,
-    rgba(174, 18, 19, 1) 100%
+    rgba(0, 0, 0, 1) 10%,
+    rgba(26, 36, 45, 1) 45%,
+    rgba(174, 18, 19, 1) 120%
   );
   padding: 3%;
 }
@@ -672,7 +865,6 @@ nav ul li {
 }
 .contact-form input {
   color: white;
-
 }
 
 .contact-input {
@@ -727,6 +919,32 @@ textarea.contact-input {
 }
 
 .navbar-default {
-  background-color: rgb(26, 36, 45);
+  background: none;
 }
 /* Navbar SCROLLING end */
+
+/* Swipper START */
+.swiper-pagination-bullet {
+  width: var(
+    --swiper-pagination-bullet-width,
+    var(--swiper-pagination-bullet-size, 15px)
+  );
+  height: var(
+    --swiper-pagination-bullet-height,
+    var(--swiper-pagination-bullet-size, 15px)
+  );
+  background: var(--swiper-pagination-bullet-inactive-color, #ffffffc5);
+}
+.swiper {
+  position: initial;
+  height: 100%;
+}
+/* Swipper END */
+
+.aos-init, .aos-animate{
+  overflow: hidden;
+}
+
+
+
+

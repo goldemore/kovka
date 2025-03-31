@@ -9,16 +9,16 @@ const Project = () => {
     <section className="projects_section">
       <div className="container projects_container">
         <div className="short_about_h2">
-          <div
+          {/* <div
             className="short_about_uzor_before"
             style={{ zIndex: "999" }}
-          ></div>
+          ></div> */}
 
           <h2 className="projects_section_h2">Lahiyələr</h2>
-          <div
+          {/* <div
             className="short_about_uzor_after"
             style={{ zIndex: "999" }}
-          ></div>
+          ></div> */}
         </div>
         <div className="projects_grid_container">
             <div className="projects_grid_card">
