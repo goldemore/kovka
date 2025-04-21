@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../images/logo/logo200.png";
 import { FaSearch } from "react-icons/fa";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
@@ -15,7 +15,7 @@ const languages = [
 const Navbar2 = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
   // Эффект при прокрутке
 
@@ -41,7 +41,7 @@ const Navbar2 = () => {
     };
   }, []);
 
-//   Смена языка при нажатии 
+  //   Смена языка при нажатии
 
   const [language, setLanguage] = useState(
     localStorage.getItem("kovka_lg") || "az"
@@ -52,7 +52,7 @@ const Navbar2 = () => {
     window.location.reload();
     setLanguage(newLanguage);
     localStorage.setItem("kovka_lg", newLanguage);
-    
+
     i18n.changeLanguage(newLanguage);
     setIsOpen(false); // Закрываем список после выбора
   };
@@ -61,7 +61,17 @@ const Navbar2 = () => {
     i18n.changeLanguage(language);
   }, [language]);
 
-  
+  // Обработчик для поисковика
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchText, setSearchText] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    setShowSearch(false); // Закрыть окно
+    navigate("/404"); // Пока что редирект
+  };
 
   return (
     <header
@@ -94,7 +104,10 @@ const Navbar2 = () => {
               <Link to="/contact">
                 <li>{t("nav.contact")}</li>
               </Link>
-              <li>
+              <li
+                onClick={() => setShowSearch(true)}
+                style={{ cursor: "pointer" }}
+              >
                 <FaSearch />
               </li>
             </ul>
@@ -121,6 +134,24 @@ const Navbar2 = () => {
           <BurgerMenu />
         </div>
       </div>
+
+      {showSearch && (
+        <div className="search-overlay">
+          <form className="search-form" onSubmit={handleSearchSubmit}>
+            <input
+              type="text"
+              placeholder={t("search_place")}
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              autoFocus
+            />
+            <button type="submit">{t("submit")}</button>
+            <span className="close-btn" onClick={() => setShowSearch(false)}>
+              ×
+            </span>
+          </form>
+        </div>
+      )}
     </header>
   );
 };

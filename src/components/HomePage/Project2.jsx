@@ -3,11 +3,13 @@ import React from "react";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 AOS.init({
   once: true,
 });
 
 const Project2 = () => {
+  const {t} = useTranslation()
   return (
     <section className="project2_section">
       <div className="container">
@@ -19,7 +21,7 @@ const Project2 = () => {
             className="place_address"
           >
             <FaMapMarkerAlt />
-            <p>Azərbaycan, Bakı ş.</p>
+            <p>{t('address')}</p>
           </div>
 
           <div
