@@ -9,7 +9,7 @@ AOS.init({
 });
 
 const Project2 = () => {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   return (
     <section className="project2_section">
       <div className="container">
@@ -21,7 +21,7 @@ const Project2 = () => {
             className="place_address"
           >
             <FaMapMarkerAlt />
-            <p>{t('address')}</p>
+            <p>{t("address")}</p>
           </div>
 
           <div
@@ -36,13 +36,13 @@ const Project2 = () => {
                 href="tel:+994500000000"
                 className="contact_item footer_contact_item"
               >
-                +99450-00-00
+                +99450-208-68-90
               </a>
               <a
                 href="tel:+994500000000"
                 className="contact_item footer_contact_item"
               >
-                +99450-00-00
+                +99455-470-90-99
               </a>
             </div>
           </div>

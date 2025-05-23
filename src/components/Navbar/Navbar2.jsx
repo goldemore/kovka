@@ -76,9 +76,7 @@ const Navbar2 = () => {
   return (
     <header
       className={`navbar ${isScrolled ? "navbar-scrolled" : "navbar-default"}`}
-      style={
-        !isHomePage ? { position: "relative", backgroundColor: "#1a242d" } : {}
-      }
+     
     >
       <div className="container navbar2_container">
         {/* Logo */}

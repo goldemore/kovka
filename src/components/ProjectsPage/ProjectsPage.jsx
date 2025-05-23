@@ -4,15 +4,16 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+
+
 AOS.init({
   duration: 800,
 }); // Инициализация
 
 const ProjectsPage = () => {
-
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -36,13 +37,12 @@ const ProjectsPage = () => {
 
   return (
     <>
-      <section className="hero_about_section">
+      <section className="hero_project_section">
+        <div className="navbar_imitation" style={{}}></div>
         <div className="container hero_about_container">
-          <h1 className="project_h1 tracking-in-contract">{t('nav.projects')}</h1>
-        </div>
-      </section>
-      <section className="hero_about_section_content">
-        <div className="container">
+          <h1 className="project_h1 tracking-in-contract">
+            {t("nav.projects")}
+          </h1>
           <div data-aos="zoom-in">
             <div className="grid_container_products">
               {photos.map((product, index) => (
@@ -69,18 +69,22 @@ const ProjectsPage = () => {
       {isGalleryOpen && (
         <div
           className="fullscreen-gallery"
-          onClick={closeGalleryOnBackgroundClick} // Закрытие галереи по клику на фон
+          onClick={closeGalleryOnBackgroundClick}
         >
+          {/* Иконка закрытия */}
+          <button className="close-gallery-button" onClick={closeGallery}>
+            <FaTimes />
+          </button>
+
           <ImageGallery
             items={photos[currentIndex].images.map((img) => ({
               original: img,
               thumbnail: img,
             }))}
-            startIndex={0} // Начать с первого изображения
-            showThumbnails={false} // Скрыть миниатюры
-            showBullets={true} // Показать стрелки навигации
-            onClose={closeGallery} // Закрытие галереи
-            slideDuration={500} // Анимация смены слайдов
+            startIndex={0}
+            showThumbnails={true}
+            showBullets={true}
+            slideDuration={500}
             showPlayButton={false}
             showFullscreenButton={false}
           />

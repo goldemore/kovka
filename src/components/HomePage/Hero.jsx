@@ -9,9 +9,10 @@ import "swiper/css/autoplay";
 
 // Import required modules
 import { EffectFade, Pagination, Autoplay, Navigation } from "swiper/modules";
-import img1 from "../../images/bg_images/forging_bg2.webp";
-import img2 from "../../images/bg_images/forging_bg3.webp";
-import img3 from "../../images/bg_images/forging_bg4.webp";
+import img1 from "../../images/bg_images/111.jpeg";
+import img2 from "../../images/bg_images/f-2.jpg";
+import img3 from "../../images/bg_images/113.jpeg";
+import img4 from "../../images/bg_images/forging_bg4.webp";
 import { useTranslation } from "react-i18next";
 
 const Hero = () => {
@@ -44,10 +45,19 @@ const Hero = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className="slide">
+              <img src={img4} alt="Slide 3" />
+              <div className="overlay"></div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="slide last_slide">
               <img src={img3} alt="Slide 3" />
               <div className="overlay"></div>
             </div>
           </SwiperSlide>
+
+          
         </Swiper>
       </div>
     </section>

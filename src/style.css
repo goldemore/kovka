@@ -78,10 +78,12 @@ footer {
   color: var(--header_color);
 }
 .logo_img {
+  position: relative;
   width: 150px;
   height: 120px;
   /* border-right: 1px solid rgb(255 255 255 / 10%); */
 }
+
 .logo_img img {
   width: 100%;
   height: 100%;
@@ -220,7 +222,6 @@ nav ul li {
   background: #e3e3e3;
 }
 
-
 /* --- NAVBAR END --- */
 /* -- HERO START -- */
 .hero_section {
@@ -264,7 +265,13 @@ nav ul li {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: filter 1s ease-in-out; /* Плавное появление */
+  object-position: 30% 17%;
+  /* transition: filter 1s ease-in-out;  */
+  /* Плавное появление */
+}
+
+.last_slide img {
+  object-position: 30% 40%;
 }
 .swiper-slide-prev img,
 .swiper-slide-next img {
@@ -277,7 +284,7 @@ nav ul li {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Затемнение */
+  background: rgba(0, 0, 0, 0.5); /* Затемнение */
 }
 
 .tracking-in-contract {
@@ -317,25 +324,38 @@ nav ul li {
 /* --- HERO END --- */
 
 .separator_class {
-  height: 45px;
+  height: 1px;
   background: rgb(26, 36, 45);
   background: radial-gradient(
     circle,
     rgba(0, 0, 0, 1) 25%,
-    /* rgba(26, 36, 45, 1) 45%, */
-    rgba(174, 18, 19, 1) 100%
+    /* rgba(26, 36, 45, 1) 45%, */ rgb(255, 255, 255) 100%
   );
 }
 
 /* -- Short ABOUT section START -- */
 .short_about_section {
   /* height: 80vh; */
-  background-image: url("./images/bg_images/forging_bg31.webp");
+  background-image: url("./images/bg_images/f-3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 40% 30%;
   background-attachment: fixed;
   padding-bottom: 5%;
+  position: relative;
+}
+.short_about_section::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.c-2 {
+  z-index: 9999;
+  position: sticky;
 }
 /* .short_about_uzor_after {
   background: url("./images/after-before/under_uzor.png");
@@ -373,12 +393,7 @@ nav ul li {
 .short_about_content {
   display: flex;
   justify-content: space-around;
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 1) 35%,
-    /* rgba(26, 36, 45, 1) 35%, */
-    rgba(174, 18, 19, 1) 115%
-  );
+  align-items: center;
   padding: 3%;
 }
 .short_about_content_h3_p {
@@ -395,7 +410,7 @@ nav ul li {
 .short_about_content_h3_p p {
   font-weight: 400;
   font-size: 1.8rem;
-  color: #999999;
+  color: #c9c9c9;
   line-height: 30px;
   letter-spacing: 1px;
 }
@@ -516,7 +531,8 @@ nav ul li {
 .project2_section {
   background: url("./images/bg_images/world_map.webp") no-repeat center center;
   background-size: cover;
-  height: 90vh;
+  background-position: 40%;
+  height: 75vh;
   position: relative;
 }
 
@@ -528,7 +544,6 @@ nav ul li {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4); /* Темный цвет с прозрачностью */
- 
 }
 .place_address {
   display: flex;
@@ -566,7 +581,7 @@ nav ul li {
   font-weight: 400;
   height: 90vh;
   position: sticky;
-  
+
   padding-left: 10%;
 }
 .footer_contact_item {
@@ -598,15 +613,52 @@ nav ul li {
 /* -- About Us START -- */
 .hero_about_section {
   position: relative;
-  height: 25vh;
-  /* background-color: aqua; */
-  background: url("./images/aboutUs/6.png");
+
+  min-height: 100vh;
+  background: url("./images/aboutUs/12.jpeg") no-repeat fixed;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 40% 150%;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
+  background-position: 40% 12%;
+}
+.hero_about_section2 {
+  padding-top: 110px !important;
+}
+
+.navbar_imitation {
+  height: 120px;
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .img_plus_piece_of_text {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .img_plus_piece_of_text_img,
+  .about_text {
+    max-width: 100%;
+    flex: unset;
+  }
+
+  .about_text p {
+    padding: 5%;
+    font-size: 14px;
+  }
+
+  .about_text span {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about_text p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .about_text span {
+    font-size: 20px;
+  }
 }
 
 .hero_about_section::after {
@@ -616,70 +668,101 @@ nav ul li {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Темный цвет с прозрачностью */
-  z-index: 1; /* Чтобы псевдоэлемент был сверху, но под содержимым */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
+
+.hero_about_container {
+  position: relative;
+  z-index: 2;
+}
+
 .hero_about_container h1 {
-  position: sticky;
   font-family: "Merriweather", serif;
   font-size: 40px;
   color: white;
   letter-spacing: 4px;
-  z-index: 5;
   font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .about_content_section {
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.8) 10%,
-    rgba(26, 36, 45, 1) 35%,
-    rgba(174, 18, 19, 1) 115%
-  );
   padding: 2% 3%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.hero_about_section_content {
-  background-color: #1a242dd9;
-  padding: 3% 0;
-}
-.hero_about_section_content p {
-  color: white;
-  font-size: 18px;
-}
-.img_plus_piece_of_text_img {
-  max-width: 360px;
-}
-.img_plus_piece_of_text_img img {
-  width: 140%;
-}
+
 .img_plus_piece_of_text {
+  max-width: 1328px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.img_plus_piece_of_text p {
-  padding: 2%;
-  max-width: 570px;
-  text-align: justify;
-  letter-spacing: 0.6px;
-}
-.img_plus_piece_of_text span {
-  font-size: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.div_liner {
-  background-color: #e8ac39;
-  height: 2px;
+.img_plus_piece_of_text_img {
+  max-width: 360px;
+  flex: 1;
+}
+
+.img_plus_piece_of_text_img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+}
+
+.about_text {
+  flex: 2;
+  color: white;
+}
+
+.about_text p {
+  padding: 2%;
+  /* max-width: 570px; */
+  text-align: justify;
+  letter-spacing: 1px;
+  line-height: 25px;
+  font-size: 15px;
+}
+
+.about_text span {
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 /* --- About Us END --- */
 
 /* -- Projects Page START -- */
+.hero_project_section {
+  position: relative;
+  min-height: 100vh;
+  background: url("./images/aboutUs/FS-3.png") no-repeat fixed;
+  background-size: cover;
+  background-position: 40% 12%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
+.hero_project_section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 .project_h1 {
   position: relative;
   display: inline-block;
@@ -688,10 +771,9 @@ nav ul li {
   justify-content: center;
 }
 
-
 .grid_container_products {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 .product_card {
@@ -723,16 +805,69 @@ nav ul li {
 
 .product_card_image {
   position: relative; /* Для размещения иконки и затемнения */
-  max-width: 360px;
+  max-width: 260px;
+  height: 260px;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 10px;
+}
 
+.image-gallery-slide .image-gallery-image {
+  width: 90% !important;
+}
+.image-gallery-left-nav {
+  left: -40px;
+}
+.image-gallery-right-nav {
+  right: -40px;
+}
+.image-gallery-thumbnail .image-gallery-thumbnail-image {
+  height: 90px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:focus {
+  border-radius: 10px;
+  cursor: pointer;
+}
+.fullscreen-gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-gallery-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.2s ease;
+}
+.navbar_imitation {
+  height: 120px;
+  width: 100%;
+}
+.close-gallery-button:hover {
+  transform: scale(1.2);
+  color: #f44336;
 }
 
 .product_card_image img {
   width: 100%;
   transition: transform 0.3s ease-in-out;
-  
 }
 
 .product_card_image:hover img {
@@ -772,11 +907,6 @@ nav ul li {
   opacity: 1; /* Затемнение фона при наведении */
 }
 
-
-
-.product_card_image img {
-  width: 100%;
-}
 .product_card h3 {
   color: white;
   font-size: 20px;
@@ -808,6 +938,24 @@ nav ul li {
 /* --- Projects Page END --- */
 
 /* -- Contacts FORM START -- */
+
+.hero_contact_section {
+  position: relative;
+
+  min-height: 100vh;
+  background: url("./images/aboutUs/4.jpg") repeat fixed;
+  background-size: cover;
+  background-position: 40% 120%;
+}
+
+.hero_contatct_section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.iframe__address{
+width: 100%;
+}
 .hero_about_section {
   padding: 20px 0;
 }
@@ -816,22 +964,13 @@ nav ul li {
   text-align: center;
 }
 
-.hero_about_section_content {
-  padding: 40px 0;
-}
-
 .contact_container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 1) 10%,
-    rgba(26, 36, 45, 1) 45%,
-    rgba(174, 18, 19, 1) 120%
-  );
+
   padding: 3%;
 }
 
@@ -877,6 +1016,7 @@ nav ul li {
   color: #333;
   outline: none;
   transition: border-color 0.3s ease;
+  color: #f3f3f3;
 }
 
 .contact-input:focus {
@@ -941,7 +1081,8 @@ textarea.contact-input {
 }
 /* Swipper END */
 
-.aos-init, .aos-animate{
+.aos-init,
+.aos-animate {
   overflow: hidden;
 }
 
@@ -996,7 +1137,7 @@ textarea.contact-input {
   left: 0;
   width: 100%;
   height: 100%;
-  background:  rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1052,7 +1193,3 @@ textarea.contact-input {
 }
 
 /* End popup */
-
-
-
-

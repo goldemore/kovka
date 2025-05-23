@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import slider1 from "../../images/slider/1.png";
+// import slider1 from "../../images/slider/1.png";
+import slider1 from "../../images/bg_images/999.jpeg";
 import Separator from "../Separator";
 import { motion } from "framer-motion";
 import AOS from "aos";
@@ -42,7 +43,7 @@ const ShortAbout = () => {
   return (
     <>
       <section className="short_about_section">
-        <div className="container ">
+        <div className="container c-2">
           <div className="short_about_h2">
             <h2 id="animated-text" className="short_about_h2">
               {t("who_are_we").split("").map((char, index) => ( // Используем ключ "who_are_we"
