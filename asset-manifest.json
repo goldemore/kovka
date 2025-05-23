@@ -1,31 +1,35 @@
 {
   "files": {
-    "main.css": "/kovka/static/css/main.4787c9e4.css",
-    "main.js": "/kovka/static/js/main.c2f5d611.js",
+    "main.css": "/kovka/static/css/main.3bcd42b6.css",
+    "main.js": "/kovka/static/js/main.f6314339.js",
     "static/js/38.cfbdb541.chunk.js": "/kovka/static/js/38.cfbdb541.chunk.js",
+    "static/media/FS-3.png": "/kovka/static/media/FS-3.bc8af6631de7f684238b.png",
     "static/media/forging_bg4.jpg": "/kovka/static/media/forging_bg4.a2d2302652cc805ea0ef.jpg",
-    "static/media/6.png": "/kovka/static/media/6.10e5dbb45f151d659998.png",
+    "static/media/111.jpeg": "/kovka/static/media/111.81518d913f073f742d76.jpeg",
+    "static/media/12.jpeg": "/kovka/static/media/12.02f3b2c0e472472509fa.jpeg",
+    "static/media/999.jpeg": "/kovka/static/media/999.02f3b2c0e472472509fa.jpeg",
     "static/media/2.png": "/kovka/static/media/2.92c925b518983f497d18.png",
     "static/media/3.png": "/kovka/static/media/3.6ffc2ad8cefa7ea783d4.png",
+    "static/media/113.jpeg": "/kovka/static/media/113.e15946ba3768234d23c9.jpeg",
     "static/media/1.png": "/kovka/static/media/1.00eeceb792da5d10ce8a.png",
     "static/media/logo200.png": "/kovka/static/media/logo200.004349c954f7559102ff.png",
     "static/media/forging_bg4.webp": "/kovka/static/media/forging_bg4.6145d85fa1a8136b9c4e.webp",
-    "static/media/forging_bg3.webp": "/kovka/static/media/forging_bg3.aaa8064fdb0a0180dbf1.webp",
-    "static/media/forging_bg2.webp": "/kovka/static/media/forging_bg2.6acf8a80ef88377d8c01.webp",
+    "static/media/4.jpg": "/kovka/static/media/4.5ea39b51128ae7360644.jpg",
     "static/media/world_map.webp": "/kovka/static/media/world_map.742e5f6b6b45687e34ad.webp",
     "static/media/3.jpg": "/kovka/static/media/3.6dd995f43146933cef6f.jpg",
     "static/media/1.jpg": "/kovka/static/media/1.9d78b065a88918a1744c.jpg",
     "static/media/2.jpg": "/kovka/static/media/2.688953313c7079d0ff17.jpg",
-    "static/media/forging_bg31.webp": "/kovka/static/media/forging_bg31.e9d2e05bd5a63f454678.webp",
     "static/media/429_1.png": "/kovka/static/media/429_1.ea9ed2977daa968572c3.png",
     "static/media/anvil_cut.png": "/kovka/static/media/anvil_cut.b966b2d45f133ac79902.png",
+    "static/media/f-2.jpg": "/kovka/static/media/f-2.eb4abb92b0a9774a2f1a.jpg",
+    "static/media/f-3.jpg": "/kovka/static/media/f-3.f4c808b018b0622afc4f.jpg",
     "index.html": "/kovka/index.html",
-    "main.4787c9e4.css.map": "/kovka/static/css/main.4787c9e4.css.map",
-    "main.c2f5d611.js.map": "/kovka/static/js/main.c2f5d611.js.map",
+    "main.3bcd42b6.css.map": "/kovka/static/css/main.3bcd42b6.css.map",
+    "main.f6314339.js.map": "/kovka/static/js/main.f6314339.js.map",
     "38.cfbdb541.chunk.js.map": "/kovka/static/js/38.cfbdb541.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4787c9e4.css",
-    "static/js/main.c2f5d611.js"
+    "static/css/main.3bcd42b6.css",
+    "static/js/main.f6314339.js"
   ]
 }
