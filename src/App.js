@@ -15,7 +15,7 @@ const App = () => {
     window.scrollTo(0, 0);
   });
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/kovka">
       <ScrollToTop/>
       {/* <Navbar/> */}
       <Navbar2 />
